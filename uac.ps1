@@ -4,3 +4,6 @@ $start_time = Get-Date
 
 $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
+
+cd $env:HOMEPATH
+regedit.exe uac.reg
