@@ -190,27 +190,6 @@
                             "workspaceKey": "[listKeys(resourceId(parameters('omsWorkspaceResourceGroup'),'Microsoft.OperationalInsights/workspaces/', parameters('omsWorkspaceName')), '2015-03-20').primarySharedKey]"
                         }
                     }
-                },
-                {
-                    "type": "extensions",
-                    "name": "DisbleUAC",
-                    "location": "[resourceGroup().location]",
-                    "apiVersion": "2015-06-15",
-                    "dependsOn": [
-                        "[concat('Microsoft.Compute/virtualMachines/', parameters('virtualmachineName'),copyindex(1))]"
-                    ],
-                    "properties": {
-                        "publisher": "Microsoft.Compute",
-                        "type": "CustomScriptExtension",
-                        "typeHandlerVersion": "1.9",
-                        "autoUpgradeMinorVersion": true,
-                        "settings": {
-                            "fileUris": [
-                                "https://raw.githubusercontent.com/hanuravim/SFTP/master/uac.ps1"
-                            ],
-                            "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File uac.ps1"
-                        }
-                    }
                 }
             ]
         }
