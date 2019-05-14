@@ -117,10 +117,10 @@
         "domainName": {
             "type": "string"
         },
-        "secret_DomainUserName": {
+        "secretname_DomainAdminUserName": {
             "type": "string"
         },
-        "secret_DomainPassword": {
+        "secretname_DomainAdminPassword": {
             "type": "string"
         },
         "baseUri": {
@@ -268,7 +268,7 @@
                             "keyVault": {
                                 "id": "[resourceId(subscription().subscriptionId,  parameters('keyVaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('keyvaultName'))]"
                             },
-                            "secretName": "[parameters('secret_DomainPassword')]"
+                            "secretName": "[parameters('secretname_DomainAdminPassword')]"
                         }
                     },
                     "omsWorkspaceResourceGroup": {
@@ -314,7 +314,7 @@
                             "keyVault": {
                                 "id": "[resourceId(subscription().subscriptionId,  parameters('keyVaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('keyvaultName'))]"
                             },
-                            "secretName": "[parameters('secret_DomainUserName')]"
+                            "secretName": "[parameters('secretname_DomainAdminUserName')]"
                         }
                     },
                     "DomainPassword": {
@@ -322,7 +322,7 @@
                             "keyVault": {
                                 "id": "[resourceId(subscription().subscriptionId,  parameters('keyVaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('keyvaultName'))]"
                             },
-                            "secretName": "[parameters('secret_DomainPassword')]"
+                            "secretName": "[parameters('secretname_DomainAdminPassword')]"
                         }
                     }
                 }
